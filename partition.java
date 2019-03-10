@@ -1,3 +1,4 @@
+import java.util.Random;
 public class partition{
   public int partition(int[] data; int start; int end){
     if (start<0 || start>= data.length || end < 0 || end >= data.length){
@@ -7,6 +8,7 @@ public class partition{
     for (int i = start; i< end+1; i++){
       newData[i] = data[i];
     }
-    
+Random r = new Random();
+int random = r.nextInt(end+1)+start;
   }
 }
