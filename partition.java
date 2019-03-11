@@ -1,12 +1,13 @@
 import java.util.Random;
 public class partition{
-  public int partition(int[] data; int start; int end){
+  public static int partition(int[] data, int start, int end){
     if (start<0 || start>= data.length || end < 0 || end >= data.length){
-      throw new IndexOutofBoundsException();
+      throw new IndexOutOfBoundsException();
     }
 
 int random = (int)(Math.random() * (end - start) + start);
 int pivot = data[random];
+System.out.println(pivot);
 while (start <end){
   while (data[start] < pivot){
     start++;
@@ -21,5 +22,9 @@ while (start <end){
   }
 }
 return end;
+  }
+  public static void main(String[] args) {
+    int[] data = new int[] {23, 14, 1, 0, 99};
+    System.out.println(partition(data, 0, 4));
   }
 }
