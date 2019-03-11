@@ -4,11 +4,22 @@ public class partition{
     if (start<0 || start>= data.length || end < 0 || end >= data.length){
       throw new IndexOutofBoundsException();
     }
-    int[] newData = new int[end-start+1];
-    for (int i = start; i< end+1; i++){
-      newData[i] = data[i];
-    }
-Random r = new Random();
-int random = r.nextInt(end+1)+start;
+
+int random = (int)(Math.random() * (end - start) + start);
+int pivot = data[random];
+while (start <end){
+  while (data[start] < pivot){
+    start++;
+  }
+  while (data[end] > pivot){
+    end--;
+  }
+  if (start < end){
+    int temp = data[start];
+    data[start] = data[end];
+    data[end] = temp;
+  }
+}
+return end;
   }
 }
